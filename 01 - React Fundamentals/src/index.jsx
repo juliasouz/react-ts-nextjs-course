@@ -14,14 +14,22 @@ function Greeting() {
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            style={{ padding: "8px", fontSize: "16px" }}
+            style={{ padding: "6px", fontSize: "12px" }}
           />
         </li>
       </ul>
-      <h2>Hello, {name || "World"}!</h2>{" "}
+      <Message name={name} />
     </div>
   );
 }
+
+const Person = ({ name }) => {
+  return <>{name}</>;
+};
+
+const Message = ({ name }) => {
+  return <h2>Hello, {name ? <Person name={name} /> : "World"}!</h2>;
+};
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 

@@ -54,17 +54,20 @@ const books = [
 
 function BookList() {
   return (
-    <section className="booklist">
-      {books.map((book) => {
-        const { description, ...rest } = book;
-        return (
-          <Book {...rest} key={book.id}>
-            <p>{description}</p>
-            <button>Start Reading</button>
-          </Book>
-        );
-      })}
-    </section>
+    <>
+      <h1 className="galaxy-title">Cosmic Library</h1>
+      <section className="booklist">
+        {books.map((book) => {
+          const { description, ...rest } = book;
+          return (
+            <Book {...rest} key={book.id}>
+              <p>{description}</p>
+              <button>Start Reading</button>
+            </Book>
+          );
+        })}
+      </section>
+    </>
   );
 }
 

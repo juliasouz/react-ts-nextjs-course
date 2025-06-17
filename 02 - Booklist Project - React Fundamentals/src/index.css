@@ -22,6 +22,41 @@ body {
   color: #222;
 }
 
+.galaxy-title {
+  text-align: center;
+  margin: 2rem 0;
+  font-size: 3.5rem;
+  background: linear-gradient(90deg, #8553fa, #d348ec);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  position: relative;
+}
+
+.galaxy-title span {
+  display: inline-block;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.galaxy-title::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #8b5cf6, transparent);
+  margin: 0.5rem auto;
+}
+
 .booklist {
   width: 90vw;
   max-width: 1170px;
@@ -51,7 +86,7 @@ body {
 }
 
 .book img {
-  width: 100%;
+  width: 50%;
   object-fit: cover;
 }
 
